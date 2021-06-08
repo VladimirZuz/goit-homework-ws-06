@@ -800,6 +800,7 @@ body {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .modal-form-head {
@@ -817,12 +818,19 @@ body {
   flex-direction: column;
 }
 
-/*
+.modal-form-icon {
+  position: absolute;
+  display: block;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 12px;
+  fill: #212121;
+}
+
 .modal-form-input-wrapper {
   position: relative;
   display: block;
 }
-*/
 
 .modal-form-input {
   width: 100%;
@@ -830,7 +838,16 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   color: #212121;
-  padding-left: 12px;
+  padding-left: 42px;
+  cursor: pointer;
 }
 
+.modal-form-input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.modal-form-input:focus + .modal-form-icon {
+  fill: var(--accent-color);
+}
 /*======================END MODAL WINDOW============================*/ ;
