@@ -54,6 +54,17 @@ a {
   margin: 0 auto;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
 body {
   font-family: var(--main-font);
   color: #757575;
@@ -827,9 +838,14 @@ body {
   fill: #212121;
 }
 
+.modal-form-field {
+  margin-bottom: 10px;
+}
+
 .modal-form-input-wrapper {
   position: relative;
   display: block;
+  margin-top: 4px;
 }
 
 .modal-form-input {
@@ -850,4 +866,98 @@ body {
 .modal-form-input:focus + .modal-form-icon {
   fill: var(--accent-color);
 }
-/*======================END MODAL WINDOW============================*/ ;
+
+.modal-form-input:required:focus:valid {
+  border-color: var(--accent-color);
+}
+
+.modal-form-input:required:focus:invalid {
+  border-color: red;
+}
+
+.modal-form-message:required:focus:valid {
+  border-color: var(--accent-color);
+}
+
+.modal-form-message:required:focus:invalid {
+  border-color: red;
+}
+
+.modal-form-message {
+  width: 100%;
+  height: 120px;
+  cursor: pointer;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-top: 4px;
+  resize: none;
+  padding: 12px 16px;
+}
+
+.modal-form-message:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.modal-form-message::placeholder {
+  font-size: 14px;
+  line-height: 1.14;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.icon-non-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.modal-form-checkbox:checked + .icon-non-checkbox {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-image: url('../images/icon-check.svg');
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.modal-form-checkbox-policy {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.71;
+  justify-content: center;
+}
+
+.modal-form-policy-link {
+  color: var(--accent-color);
+}
+
+.modal-form-btn {
+  align-self: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background-color: #188ce8;
+
+  cursor: pointer;
+  border: 0px;
+  border-radius: 4px;
+
+  padding: 10px 55px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 26px;
+}
+
+.modal-form-btn:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+/*======================END MODAL WINDOW============================*/
