@@ -908,6 +908,13 @@ body {
   flex-direction: column;
 }
 
+.modal-form-field {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+
 .modal-form-icon {
   position: absolute;
   display: block;
